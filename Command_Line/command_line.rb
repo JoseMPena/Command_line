@@ -38,3 +38,5 @@ class CommandLine
     end
   end
 end
+
+CommandLine.new.start

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8"><!--Familia de caracteres que incluye acentos y ñ-->
+		<title>DoggyMatch</title>
+	</head>
+	<body>
+		<div class="top_bar">
+			<!--Barra de buscar y de redes sociales en el tope de la página -->
+		</div>
+		<div>
+			<!--Area de logo y de navegación -->
+			<div><a href="index.html"><img src="img/logo.jpg" alt="CompanyLogo"></a></div>	<!-- Logo de la pagina DoggyMatch-->
+			<div><a href="buscar_pareja.html"><h3>Buscar Pareja</h3></a></div>				<!-- Enlace a la pagina de Buscar pareja-->
+			<div><a href="registro_mascota.html"><h3>Registra a tu Mascota</h3></a></div>	<!-- Enalace a la pagina de registro-->
+			<div><a href="about.html"><h3>Sobre (Mi) Nosotros</h3></a></div>				<!-- Enlace a la pagina de informacion-->
+		</div>
+		<div>
+			<!--Area de Registrar Mascota-->
+			<form>
+				<div>
+					<label for="nombre">Nombre</label>
+					<input type="text" name="nombre" id="nombre">
+					<label for="raza">Raza</label>
+					<input type="text" name="raza" id="raza">
+					<label for="edad">Edad</label>
+					<input type="integer" name="edad" id="edad">
+					<label for="comida">Comida Favorita</label>
+					<input type="text" name="comida" id="comida">
+					<label for="bozal">LLeva bozal</label>
+					<input type="checkbox" name="bozal" id="bozal" value="1" unchecked>
+					<label for="vacuna">Vacunado/a</label>
+					<input type="checkbox" name="vacuna" id="vacuna" value="1" unchecked>
+				</div>
+				<button type="registrar">Registrar</button>
+			</form>
+
+		</div>
+
+	</body>
+</html>
