@@ -25,6 +25,7 @@ describe Task do
       it "changes the complete status to true" do
         @task.complete!
         expect(@task.complete?).to eql true
+        #Todo this for inomplete task
       end
     end
   end
