@@ -42,4 +42,21 @@ describe TodoList do
       end
     end
   end
+
+  describe "#sort_by_created" do
+    context "given a todo_list with some tasks and invoked sort_by_created" do
+      it "returns an array of tasks sorted by created date" do
+        @todo_list.add_task(@task_milk)
+        @todo_list.add_task(@task_dog)
+        expect(@todo_list.sort_by_created).to eql [@task_dog, @task_milk]
+      end
+    end
+    context "given sorting method (DESC)" do
+      it "returns an array of tasks sorted by created date in descendent" do
+        @todo_list.add_task(@task_milk)
+        @todo_list.add_task(@task_dog)
+        expect(@todo_list.sort_by_created("DESC")).to eql [@task_milk, @task_dog]
+      end
+    end
+  end
 end

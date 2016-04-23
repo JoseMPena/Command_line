@@ -1,5 +1,5 @@
 class Task
-  attr_reader :content, :id, :completed
+  attr_reader :content, :id, :completed, :created_at
 
   #@@ marks a class variable which is unique over all instances of this class
   @@current_id = 0
