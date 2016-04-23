@@ -14,4 +14,13 @@ describe TodoList do
       end
     end
   end
+
+  describe "#delete_task" do
+    context "given a task ID to the delete_task method" do
+      it "deletes the task from todo_list" do
+        @todo_list.delete_task(@task.id)
+        expect(@todo_list.tasks.index(@task)).to eql nil
+      end
+    end
+  end
 end
