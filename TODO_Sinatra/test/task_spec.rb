@@ -28,4 +28,14 @@ describe Task do
       end
     end
   end
+
+  describe "#make_incomplete!" do
+    context "given a complete task and invoked make_incomplete!" do
+      it "changes the task status to incomplete" do
+        @task = Task.new("Buy a book", true)
+        @task.make_incomplete!
+        expect(@task.complete?).to eql false
+      end
+    end
+  end
 end

@@ -22,4 +22,8 @@ class Task
   def complete!
     @completed = true
   end
+
+  def make_incomplete!
+    @completed = false
+  end
 end
