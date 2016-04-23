@@ -38,4 +38,16 @@ describe Task do
       end
     end
   end
+
+  describe "#update_content!" do
+    context "given a task with a mistaken content" do
+      context "walk the book" do
+        it "changes the task's content for a new one" do
+          @task = Task.new("Walk the book")
+          @task.update_content!("Walk the Dog")
+          expect(@task.content).to eql "Walk the Dog"
+        end
+      end
+    end
+  end
 end

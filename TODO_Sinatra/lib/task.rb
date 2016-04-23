@@ -8,6 +8,8 @@ class Task
     @content = content
     create_new
     @completed = complete
+    @created_at = DateTime.now
+    @updated_at = nil
   end
 
   def create_new
@@ -25,5 +27,9 @@ class Task
 
   def make_incomplete!
     @completed = false
+  end
+
+  def update_content!(new_content)
+    @content = new_content
   end
 end
