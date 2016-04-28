@@ -1,5 +1,6 @@
 require "todo_list"
 require "task"
+require "store_to_yml"
 
 describe TodoList do
   before :each do
@@ -56,6 +57,19 @@ describe TodoList do
         @todo_list.add_task(@task_milk)
         @todo_list.add_task(@task_dog)
         expect(@todo_list.sort_by_created("DESC")).to eql [@task_milk, @task_dog]
+      end
+    end
+  end
+
+  describe "#save, #load_tasks" do
+    context "given a todo_list with tasks" do
+      it "is saved and loaded from yml file" do
+        @todo_list.add_task(@task_milk)
+        @todo_list.add_task(@task_dog)
+        @todo_list.save
+        todo_list_load = TodoList.new
+        todo_list_load.load_tasks
+        expect(todo_list_load.tasks.length).to eql @todo_list.tasks.length
       end
     end
   end

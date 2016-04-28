@@ -32,4 +32,8 @@ class Task
   def update_content!(new_content)
     @content = new_content
   end
+
+  def to_s
+    @content
+  end
 end
