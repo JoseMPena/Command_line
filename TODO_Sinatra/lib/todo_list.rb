@@ -1,13 +1,12 @@
 #require_relative './store_to_yml.rb'
 require "yaml/store"
-require 'pry'
-
 require "json"
+require "store_to_yml"
+require "pry"
 
 class TodoList
   attr_reader :tasks
   def initialize(user = "Jose")
-    @todo_store = YAML::Store.new("./public/tasks.yml")
     @tasks = []
     @user = user
   end
@@ -33,16 +32,10 @@ class TodoList
   end
 
   def save
-    @todo_store.transaction do
-      @todo_store["Andreas"] = [1,3,4]
-      @todo_store[@user] = @tasks.map { |task| task.content }
-      # puts @tasks
-    end
+    StoreToYML.save(@tasks)
   end
 
   def load_tasks
-    @todo_store.transaction do
-      @todo_store[@user] = @tasks
-    end
+    @tasks = StoreToYML.load_tasks
   end
 end

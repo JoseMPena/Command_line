@@ -1,6 +1,13 @@
 ---
-Andreas:
-- 1
-- 3
-- 4
-Jose: []
+- !ruby/object:Task
+  content: Buy milk
+  id: 22
+  completed: false
+  created_at: !ruby/object:DateTime 2016-04-30 23:20:00.671850228 +02:00
+  updated_at: 
+- !ruby/object:Task
+  content: Walk the dog
+  id: 21
+  completed: false
+  created_at: !ruby/object:DateTime 2016-04-30 23:20:00.671840941 +02:00
+  updated_at: 
