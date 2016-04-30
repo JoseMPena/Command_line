@@ -1,11 +1,9 @@
 #require_relative './store_to_yml.rb'
 require "yaml/store"
-require "json"
-require "store_to_yml"
-require "pry"
+require_relative "./store_to_yml.rb"
 
 class TodoList
-  attr_reader :tasks
+  attr_reader :tasks, :user
   def initialize(user = "Jose")
     @tasks = []
     @user = user

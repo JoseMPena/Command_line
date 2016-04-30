@@ -1,0 +1,14 @@
+<!doctype HTML>
+<a href="/new_task"><strong>Create a new task</strong></a><br />
+<div>
+  <strong>Current Tasks</strong>
+</div>
+<%= "#{@user} >" %><br />
+-------------------------<br />
+<% @tasks.each do |task| %>
+  <%= task.content %><br />
+  ID > <%= task.id %><br />
+  Completed > <%= task.completed %><br />
+  Created at > <%= task.created_at.to_s %><br />
+  -----------------------------------------------<br />
+<% end %>
