@@ -12,11 +12,11 @@ tasks = todo_list.tasks
 get "/" do
   @user = todo_list.user
   @tasks = todo_list.tasks
-  erb :task_view
+  erb :task_view, layout: :layout
 end
 
 get "/new_task" do
-  erb :new_task
+  erb :new_task, layout: :layout
 end
 
 post "/create_task" do

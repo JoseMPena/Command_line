@@ -1,3 +1,5 @@
+require_relative "./store_to_yml.rb"
+
 class Task
   attr_reader :content, :id, :completed, :created_at, :updated_at
 
@@ -13,6 +15,8 @@ class Task
   end
 
   def create_new
+    existing_tasks = StoreToYML.load_tasks
+    @@current_id = existing_tasks.last.id if existing_tasks.any?
     @@current_id += 1
     @id = @@current_id
   end

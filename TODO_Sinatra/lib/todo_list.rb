@@ -1,5 +1,3 @@
-#require_relative './store_to_yml.rb'
-require "yaml/store"
 require_relative "./store_to_yml.rb"
 
 class TodoList
