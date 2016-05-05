@@ -1,5 +1,5 @@
 class Task
-  attr_reader :content, :id, :completed, :created_at
+  attr_reader :content, :id, :completed, :created_at, :updated_at
 
   #@@ marks a class variable which is unique over all instances of this class
   @@current_id = 0
@@ -21,12 +21,8 @@ class Task
     @completed
   end
 
-  def complete!
-    @completed = true
-  end
-
-  def make_incomplete!
-    @completed = false
+  def toggle_complete!
+    @completed = @completed ? false : true
   end
 
   def update_content!(new_content)

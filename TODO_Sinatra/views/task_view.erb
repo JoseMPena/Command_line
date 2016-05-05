@@ -1,14 +1,22 @@
 <!doctype HTML>
-<a href="/new_task"><strong>Create a new task</strong></a><br />
+<a href="/new_task"><strong>Create a new task</strong></a><br>
 <div>
   <strong>Current Tasks</strong>
 </div>
-<%= "#{@user} >" %><br />
+<%= "#{@user}:" %><br>
 -------------------------<br />
 <% @tasks.each do |task| %>
-  <%= task.content %><br />
-  ID > <%= task.id %><br />
-  Completed > <%= task.completed %><br />
-  Created at > <%= task.created_at.to_s %><br />
-  -----------------------------------------------<br />
+  <%= task.content %><br>
+  ID: <%= task.id %><br>
+  Completed: <%= task.completed %><br>
+  Created at: <%= task.created_at.to_s %><br>
+  <% if task.updated_at != nil %>
+    Updated at: <%= task.updated_at.to_s %><br>
+  <% end %>
+  <% @task = task %>
+  <%= erb :complete_button %>
+  <% if @task.completed %>
+    <%= erb :delete_button %>
+  <% end %>
+  -----------------------------------------------<br>
 <% end %>

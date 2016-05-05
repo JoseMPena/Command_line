@@ -10,7 +10,7 @@ get "/ascii/?:p1?/?:p2?/?:p3?" do
   if params[:p1] == "falcon" && params[:p2] == "special" && params[:p3] == "secret"
     erb :easter_egg
   else
-    artii = Artii::Base.new font: "epic"
+    artii = Artii::Base.new font: "3-d"
     @word = artii.asciify(params[:p1])
     @font = artii.asciify(params[:p2])
     erb :ascii

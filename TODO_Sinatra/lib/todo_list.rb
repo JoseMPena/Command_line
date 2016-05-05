@@ -11,10 +11,12 @@ class TodoList
 
   def add_task(task)
     @tasks << task
+    save_tasks
   end
 
   def delete_task(id)
     @tasks.delete_if { |task| task.id == id }
+    save_tasks
   end
 
   def find_task_by_id(id)
@@ -29,7 +31,7 @@ class TodoList
     end
   end
 
-  def save
+  def save_tasks
     StoreToYML.save(@tasks)
   end
 
